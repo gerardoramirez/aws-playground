@@ -1,0 +1,77 @@
+bucket my-first-bucket-for-sam-muyal
+output file pck.yml
+region us-west-2
+
+
+
+sam deploy --region us-west-2 --capabilities CAPABILITY_IAM --template-file pck.yml --stack-name first-same-project 
+
+
+Example of test
+
+ Id CommandLine
+  -- -----------
+   1 sam build
+   2 sam build
+   3 aws s3 --region us-west-2 mb s3://my-first-bucket-for-sam-muyal
+   4 sam package --template-file .\template.yaml --output-template-file pck.yml --s3-bucket my-first-bucket-for-sam-muyal
+   5 sam deploy --region us-west-2 --capabilities CAPABILITY_IAM --template-file pck.yml --stack-name first-same-project
+   6 sam logs --name ClockFunction --stack-name first-same-project --region us-west-2
+
+
+Creating a new ClockFunction
+  9 mkdir convert-time
+  10 cd .\convert-time\
+  11 ls
+  12 ls
+  13 ls
+  14 npm init -y
+  15 npm install --save moment
+  16 npm install --save moment-timezone
+
+
+  Notes
+
+  https://momentjs.com/timezone/
+
+
+  aws cloudformation delete-stack --stack-name first-same-project
+
+
+
+Final History
+
+PS C:\Desarrollo\AWS\first-sam-project> history
+
+  Id CommandLine
+  -- -----------
+   1 sam build
+   2 sam build
+   3 aws s3 --region us-west-2 mb s3://my-first-bucket-for-sam-muyal
+   4 sam package --template-file .\template.yaml --output-template-file pck.yml --s3-bucket my-first-bucket-for-sam-muyal
+   5 sam deploy --region us-west-2 --capabilities CAPABILITY_IAM --template-file pck.yml --stack-name first-same-project
+   6 history
+   7 sam logs --name ClockFunction --stack-name first-same-project --region us-west-2
+   8 ls
+   9 mkdir convert-time
+  10 cd .\convert-time\
+  11 ls
+  12 ls
+  13 ls
+  14 npm init -y
+  15 npm install --save moment
+  16 npm install --save moment-timezone
+  17 history
+  18 sam build
+  19 cd ..
+  20 ls
+  21 sam build
+  22 sam package --template-file .\template.yaml --output-template-file pck.yml --s3-bucket my-first-bucket-for-sam-muyal
+  23 sam deploy --region us-west-2 --capabilities CAPABILITY_IAM --template-file pck.yml --stack-name first-same-project
+  24 npm remove  moment
+  25 npm update
+  26 npm install
+  27 sam package --template-file .\template.yaml --output-template-file pck.yml --s3-bucket my-first-bucket-for-sam-muyal
+  28 sam deploy --region us-west-2 --capabilities CAPABILITY_IAM --template-file pck.yml --stack-name first-same-project
+  29 aws cloudformation delete-stack -stack-name first-same-project
+  30 aws cloudformation delete-stack --stack-name first-same-project
